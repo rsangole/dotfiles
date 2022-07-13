@@ -1,0 +1,49 @@
+[
+    {
+        "key": "alt+-", // If you prefer, replace with "cmd+-"
+        "command": "type",
+        "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus",
+        "args": {
+            "text": " <- "
+        }
+    },
+    {
+        "key": "alt+-", // If you prefer, replace with "cmd+-"
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": " <- "
+        }
+    },
+    {
+        "key": "cmd+shift+m",
+        "command": "type",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus || terminalFocus",
+        "args": {
+            "text": " |> "
+        }
+    },
+    {
+        "key": "cmd+shift+m",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": " |> "
+        }
+    },
+    // Roxygen skeleton
+    {
+        "key": "ctrl+alt+shift+r",
+        "command": "type",
+        "when": "editorLangId == r || editorLangId == rmd && editorTextFocus",
+        "args": {
+            "text": "#' Title\n#'\n#'Description\n#'\n#'@param $$\n#'\n#'@export\n#'\n#'@example\n#'"
+        }
+    },
+    // Opens R help for object at cursor's position
+    {
+        "key": "f1",
+        "command": "r.helpPanel.openForSelection",
+        "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'"
+    }
+]
